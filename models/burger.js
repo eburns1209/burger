@@ -22,16 +22,16 @@ var burger = {
 	// }
 	updateOne: function(objColVal, condition, cb){
 
-		orm.update('burgers', 'devoured', 0, function(res){
+		orm.update('burgers', objColVal, condition, function(res){
 			cb(res);
 		})
 	}, 
 
-	// delete: function (col, cb){
-	// 	orm.delete('burgers','devoured', function (res){
-	// 		cb(res)
-	// 	})
-	// }
+	gone: function (condtion, cb){
+		orm.delete('burgers',condtion, function (res){
+			cb(res)
+		});
+	}
 };
 
 module.exports = burger;

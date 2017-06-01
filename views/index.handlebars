@@ -7,15 +7,22 @@
     <h2>Burgers to Eat!</h2>
       {{#each burgers}}
     
-      <p>
-       {{this.burger_name}}
+    {{#unless devoured}}
 
-        <form action="/burgers/devoured/:id" method="POST">
+      <p>
+    <div class="row">
+      <div class="col-sm-3">
+       {{this.burger_name}}
+      </div>
+      <div class="col-sm-3">
+        <form action="/devoured/{{this.id}}" method="POST">
           <input type="hidden" name="devoured" value="true">
           <button class="btn btn-danger" type="submit">Devour it!</button>
         </form>
+      </div>
+    </div>
       </p>
-    
+    {{/unless }}
   {{/each}}
   </div>
 
@@ -26,6 +33,12 @@
       {{#if this.devoured}}
       <div class="well Devoured">
       {{this.burger_name}}
+
+   <form action="/{{this.id}}?_method=DELETE" method="POST">
+          <input type="hidden" name="devoured" value="true">
+          <button class="btn btn-danger" type="submit">Delete</button>
+        </form>
+
       </div>
       {{/if}}
       {{/each}}

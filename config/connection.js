@@ -1,4 +1,3 @@
-//where you make the connection to the db & export & used by the ORM
 var mysql = require('mysql');
 
 

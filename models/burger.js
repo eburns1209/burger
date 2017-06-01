@@ -15,11 +15,7 @@ var burger = {
 			console.log(res);
 		});
 	},
-	// eat: function(col, cb){
-	// 	orm.eatBurger('devoured', function(res){
-	// 		cb(res);
-	// 	});
-	// }
+	
 	updateOne: function(objColVal, condition, cb){
 
 		orm.update('burgers', objColVal, condition, function(res){

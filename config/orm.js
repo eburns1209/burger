@@ -21,6 +21,7 @@ function objToSql(ob){
     }
     return arr.toString();
 }
+
 //object for all our SQL statement functions
 var orm = {
     read: function(tableInput, cb) {
@@ -41,13 +42,7 @@ var orm = {
         });
 
     },
-    // eatBurger: function(col, cb){
-    //     var queryString = "UPDATE burgers SET devoured WHERE burger_name=?";
-    //     connection.query(queryString, function(err, result){
-    //         if(err) throw err;
-    //         cb(result);
-    //     });
-    // }
+    
     update: function(table, objColVal, condition, cb) {
         var queryString = 'UPDATE ' + table + ' SET devoured = 1 WHERE ' + condition;
 
